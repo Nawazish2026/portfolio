@@ -25,17 +25,17 @@ export default function Contact() {
 
             <div className="flex justify-center gap-8 mb-10">
               <a
-                href="mailto:contact@example.com"
+                href="mailto:nawazishhassan2003@gmail.com"
                 className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors"
               >
                 <FaEnvelope className="text-2xl" />
-                <span>contact@example.com</span>
+                <span>nawazishhassan2003@gmail.com</span>
               </a>
             </div>
 
             <div className="flex justify-center gap-6">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/nawazish-hassan-015078240/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-4 bg-white/5 rounded-full hover:bg-blue-600 hover:scale-110 transition-all duration-300"
@@ -43,7 +43,7 @@ export default function Contact() {
                 <FaLinkedin className="text-2xl text-white" />
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/Nawazish2026"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-4 bg-white/5 rounded-full hover:bg-gray-800 hover:scale-110 transition-all duration-300"

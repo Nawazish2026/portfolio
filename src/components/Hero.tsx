@@ -46,13 +46,13 @@ export default function Hero() {
           </div>
 
           <div className="flex justify-center space-x-6 text-2xl text-gray-400">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+            <a href="https://github.com/Nawazish2026" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
               <FaGithub />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">
+            <a href="https://www.linkedin.com/in/nawazish-hassan-015078240/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">
               <FaLinkedin />
             </a>
-            <a href="mailto:contact@example.com" className="hover:text-pink-400 transition-colors">
+            <a href="mailto:nawazishhassan2003@gmail.com" className="hover:text-pink-400 transition-colors">
               <FaEnvelope />
             </a>
           </div>

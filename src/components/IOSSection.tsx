@@ -2,18 +2,22 @@
 
 import { motion } from "framer-motion";
 import { SiSwift, SiFirebase } from "react-icons/si";
-import { FaApple } from "react-icons/fa";
+import { FaApple, FaGithub } from "react-icons/fa";
 
 const iosProjects = [
   {
-    title: "iOS Journal App",
-    description: "A beautifully designed photo journaling app built with SwiftUI. Features persistent local storage using SwiftData, supporting up to 6 photos per entry with a clean, native iOS interface.",
-    tags: ["SwiftUI", "SwiftData", "PhotosUI"],
+    title: "eJournal — Personal iOS App",
+    description: "A modern personal journaling application built with SwiftUI + SwiftData. Features persistent local storage, rich text entries with up to 6 photos, and a native Apple HIG-compliant design.",
+    image: "https://cdn.macstories.net/journal1-1-1702406173971.png",
+    tags: ["SwiftUI", "SwiftData", "PhotosUI", "MVVM"],
+    github: "https://github.com/Nawazish2026/eJournal"
   },
   {
-    title: "Flash Chat",
-    description: "Real-time messaging app featuring WhatsApp-style chat UI. Built with UIKit and Firebase for instant messaging and authentication.",
-    tags: ["UIKit", "Firebase", "Real-time"],
+    title: "Flash Chat — Real-Time Messaging",
+    description: "A WhatsApp-inspired real-time messaging app featuring secure cloud-backed data sync. Built with UIKit and Firebase Firestore for instant message streaming and authentication.",
+    image: "https://images.openai.com/static-rsc-3/qtZOYD38hI1nOLJ_EGxC65Yi7nq0z8mW38qTtkJ20X42EtWrf-8cZhCGXn9wBRdJfpfC9sd0vA7tVtLSn8PHM7wACxY19HBrl0yL0sE15uE?purpose=fullsize&v=1",
+    tags: ["UIKit", "Firebase", "Real-time", "CocoaPods"],
+    github: "https://github.com/Nawazish2026/Flash-Chat-iOS"
   }
 ];
 
@@ -45,7 +49,7 @@ export default function IOSSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16 h-full">
           {iosProjects.map((project, index) => (
             <motion.div
               key={index}
@@ -53,25 +57,46 @@ export default function IOSSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/10 hover:bg-white/15 transition-all duration-500 group"
+              className="bg-white/10 backdrop-blur-md rounded-3xl overflow-hidden border border-white/10 hover:bg-white/15 transition-all duration-500 group flex flex-col"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center shadow-lg">
-                  <SiSwift className="text-white text-2xl" />
-                </div>
-                <h3 className="text-2xl font-semibold text-white">{project.title}</h3>
+              <div className="h-64 overflow-hidden relative">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                />
               </div>
 
-              <p className="text-gray-300 text-lg mb-6 leading-relaxed">
-                {project.description}
-              </p>
+              <div className="p-8 flex flex-col flex-grow">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center shadow-lg">
+                    <SiSwift className="text-white text-xl" />
+                  </div>
+                  <h3 className="text-2xl font-semibold text-white">{project.title}</h3>
+                </div>
 
-              <div className="flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <span key={tag} className="px-3 py-1 bg-white/10 rounded-full text-sm font-medium text-blue-200">
-                    {tag}
-                  </span>
-                ))}
+                <p className="text-gray-300 text-lg mb-6 leading-relaxed flex-grow">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.tags.map((tag) => (
+                    <span key={tag} className="px-3 py-1 bg-white/10 rounded-full text-sm font-medium text-blue-200">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
+                >
+                  <FaGithub /> View Code
+                </a>
               </div>
             </motion.div>
           ))}
