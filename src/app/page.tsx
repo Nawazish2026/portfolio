@@ -8,10 +8,13 @@ import Achievements from "@/components/Achievements";
 import IOSSection from "@/components/IOSSection";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import { CursorGlow, StarField } from "@/components/AnimationEffects";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-transparent">
+    <main className="min-h-screen bg-transparent relative">
+      <StarField />
+      <CursorGlow />
       <Navbar />
       <Hero />
       <About />
