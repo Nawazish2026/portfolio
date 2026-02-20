@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { SiSwift, SiFirebase } from "react-icons/si";
+import { SiSwift } from "react-icons/si";
 import { FaApple, FaGithub } from "react-icons/fa";
 
 const iosProjects = [
@@ -27,96 +27,118 @@ const iosTech = [
 
 export default function IOSSection() {
   return (
-    <section className="py-24 relative overflow-hidden bg-white/5 backdrop-blur-3xl border-y border-white/10">
-      {/* Subtle Apple-style gradient background */}
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-500/5 to-purple-500/5 pointer-events-none" />
+    <section className="py-28 relative overflow-hidden">
+      {/* Subtle ambient glow */}
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#22D1EE]/[0.025] rounded-full blur-[150px]" />
+      </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-14"
         >
-          <div className="flex justify-center mb-4">
-            <FaApple className="text-5xl text-white opacity-90" />
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white tracking-tight">
+          <motion.div
+            className="flex justify-center mb-4"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            <FaApple className="text-4xl text-white/80" />
+          </motion.div>
+          <p className="text-xs font-medium uppercase tracking-[0.25em] text-gray-600 mb-3">
+            Native Apps
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-5 text-transparent bg-clip-text bg-gradient-to-r from-white/90 via-[#22D1EE] to-white/90 tracking-tight">
             iOS Development
           </h2>
-          <p className="text-xl text-gray-300 font-light leading-relaxed">
-            I build high-performance, beautifully designed native iOS applications using Apple&apos;s modern frameworks like SwiftUI and UIKit.
+          <p className="text-sm text-gray-500 leading-relaxed max-w-lg mx-auto">
+            Building high-performance, beautifully designed native iOS applications with Apple&apos;s modern frameworks.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16 h-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
           {iosProjects.map((project, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
+              transition={{ delay: index * 0.12, duration: 0.6, ease: "easeOut" }}
               viewport={{ once: true }}
-              className="bg-white/10 backdrop-blur-md rounded-3xl overflow-hidden border border-white/10 hover:bg-white/15 transition-all duration-500 group flex flex-col"
+              className="relative group flex flex-col"
             >
-              <div className="h-64 overflow-hidden relative">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                />
-              </div>
+              <div className="glass rounded-2xl overflow-hidden flex flex-col h-full relative hover:border-white/[0.08] transition-colors duration-500">
+                {/* Top accent */}
+                <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#22D1EE]/60 to-transparent z-20" />
 
-              <div className="p-8 flex flex-col flex-grow">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center shadow-lg">
-                    <SiSwift className="text-white text-xl" />
+                <div className="h-56 overflow-hidden relative">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#08080D] via-transparent to-transparent z-10" />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+
+                <div className="p-6 flex flex-col flex-grow">
+                  <div className="flex items-center gap-3 mb-3">
+                    <motion.div
+                      whileHover={{ rotate: 8 }}
+                      className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#22D1EE] to-[#A78BFA] flex items-center justify-center"
+                    >
+                      <SiSwift className="text-white text-lg" />
+                    </motion.div>
+                    <h3 className="text-base font-semibold text-white">{project.title}</h3>
                   </div>
-                  <h3 className="text-2xl font-semibold text-white">{project.title}</h3>
+
+                  <p className="text-gray-500 text-sm mb-5 leading-relaxed flex-grow">
+                    {project.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-1.5 mb-5">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2.5 py-1 rounded-full text-[10px] font-medium border border-[#22D1EE]/10 text-[#22D1EE]/60 bg-[#22D1EE]/[0.03]"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <motion.a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ x: 3 }}
+                    className="flex items-center gap-2 text-xs text-gray-600 hover:text-gray-300 transition-colors"
+                  >
+                    <FaGithub /> View Code
+                  </motion.a>
                 </div>
-
-                <p className="text-gray-300 text-lg mb-6 leading-relaxed flex-grow">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tags.map((tag) => (
-                    <span key={tag} className="px-3 py-1 bg-white/10 rounded-full text-sm font-medium text-blue-200">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
-                >
-                  <FaGithub /> View Code
-                </a>
               </div>
             </motion.div>
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto"
-        >
+        {/* Tech pills */}
+        <div className="flex flex-wrap justify-center gap-2.5 max-w-3xl mx-auto">
           {iosTech.map((tech, index) => (
-            <span
+            <motion.span
               key={index}
-              className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-gray-300 hover:text-white hover:bg-white/10 transition-colors cursor-default"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.04, type: "spring", stiffness: 200 }}
+              whileHover={{ borderColor: "rgba(34,209,238,0.25)" }}
+              className="px-3.5 py-1.5 rounded-full border border-white/[0.05] bg-white/[0.02] text-gray-500 text-xs cursor-default transition-colors"
             >
               {tech}
-            </span>
+            </motion.span>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

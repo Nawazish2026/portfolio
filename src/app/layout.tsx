@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space" });
 
 export const metadata: Metadata = {
   title: "Nawazish Hassan | Full Stack Developer & AI Engineer",
@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} antialiased selection:bg-purple-500 selection:text-white`}>
+      <body className={`${spaceGrotesk.variable} antialiased selection:bg-[#ADFF2F] selection:text-black`}>
         {children}
       </body>
     </html>
