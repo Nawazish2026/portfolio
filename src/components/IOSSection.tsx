@@ -6,6 +6,13 @@ import { FaApple, FaGithub } from "react-icons/fa";
 
 const iosProjects = [
   {
+    title: "MeetMind AI — Meeting Recorder",
+    description: "AI-powered meeting recorder that converts speech to text, generating structured AI summaries and action items using the Google Gemini API. Built with SwiftUI and CoreData.",
+    image: "https://raw.githubusercontent.com/Nawazish2026/MeetMindAI/main/Screenshots/home_dark.png",
+    tags: ["SwiftUI", "Gemini AI", "CoreData", "Speech API"],
+    github: "https://github.com/Nawazish2026/MeetMindAI"
+  },
+  {
     title: "eJournal — Personal iOS App",
     description: "A modern personal journaling application built with SwiftUI + SwiftData. Features persistent local storage, rich text entries with up to 6 photos, and a native Apple HIG-compliant design.",
     image: "https://cdn.macstories.net/journal1-1-1702406173971.png",
@@ -22,7 +29,7 @@ const iosProjects = [
 ];
 
 const iosTech = [
-  "Swift", "SwiftUI", "UIKit", "SwiftData", "Core Data", "Firebase", "CocoaPods", "Xcode"
+  "Swift", "SwiftUI", "UIKit", "SwiftData", "Core Data", "Firebase", "Gemini API", "AVFoundation"
 ];
 
 export default function IOSSection() {
@@ -58,7 +65,7 @@ export default function IOSSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-14">
           {iosProjects.map((project, index) => (
             <motion.div
               key={index}
