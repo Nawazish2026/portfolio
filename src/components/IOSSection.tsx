@@ -8,7 +8,7 @@ const iosProjects = [
   {
     title: "MeetMind AI — Meeting Recorder",
     description: "AI-powered meeting recorder that converts speech to text, generating structured AI summaries and action items using the Google Gemini API. Built with SwiftUI and CoreData.",
-    image: "https://raw.githubusercontent.com/Nawazish2026/MeetMindAI/main/Screenshots/home_dark.png",
+    image: "/meetmind_composite.png",
     tags: ["SwiftUI", "Gemini AI", "CoreData", "Speech API"],
     github: "https://github.com/Nawazish2026/MeetMindAI"
   },
