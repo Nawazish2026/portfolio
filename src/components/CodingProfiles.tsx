@@ -188,7 +188,7 @@ interface PlatformCard {
 const platforms: PlatformCard[] = [
   { name: "LeetCode", icon: LeetCodeIcon, color: "#FFA116", url: "https://leetcode.com/u/user1199KS/", maxProblems: 3500 },
   { name: "GeeksforGeeks", icon: GFGIcon, color: "#2F8D46", url: "https://www.geeksforgeeks.org/profile/nawazishhamslm", maxProblems: 2000 },
-  { name: "CodeChef", icon: CodeChefIcon, color: "#D4A84B", url: "https://www.codechef.com/users/afridishahid16", maxProblems: 4000 },
+  { name: "CodeChef", icon: CodeChefIcon, color: "#D4A84B", url: "https://www.codechef.com/users/david123john", maxProblems: 4000 },
   { name: "Codeforces", icon: CodeforcesIcon, color: "#60A5FA", url: "https://codeforces.com/profile/Nawazishhassan", maxProblems: 3000 },
 ];
 
